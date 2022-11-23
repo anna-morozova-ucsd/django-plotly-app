@@ -92,7 +92,9 @@ DATABASES = {
         'NAME': 'udemy',
         'USER': 'postgres',
         'PASSWORD': '123456',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
+        'PORT': 5434,
+        
     }
 }
 
@@ -128,14 +130,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-CRISPY_TEMPLATE_PACK = 'bootstap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ASGI_APPLICATION = 'plotly_django_tutorial.routing.application'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            'hosts': [('127.0.0.1', 6379),],
+            'hosts': [('127.0.0.1', 5434),],
         }
     }
 }
@@ -165,3 +167,4 @@ STATIC_ROOT = 'static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'plotly_django_tutorial/static')
 ]
+X_FRAME_OPTIONS = 'SAMEORIGIN'

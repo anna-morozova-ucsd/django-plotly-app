@@ -19,7 +19,7 @@ def home(request):
         )
 
         fig = go.Figure(data=[trace], layout=layout)
-        plot_div = plot(fig, output_type='div', include_plotlyjs=False)
+        plot_div = fig.to_html(full_html=False)
         return plot_div
 
     context ={
